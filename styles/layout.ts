@@ -13,10 +13,11 @@ export const Header = styled.header`
   height: 5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-left: 3rem;
   padding-right: 3rem;
   position: fixed;
-  border-bottom: 1px solid black;
+  box-shadow: 0.1em 0.1em 0.1em gray;
 
   h1{
       font-family: 'Roboto', sans-serif;
@@ -32,4 +33,31 @@ export const Header = styled.header`
       border:none;
       background-color: linear-gradient(to right, red , yellow);
   }
+`;
+
+export const Button = styled.div`
+   display: flex;
+   height: 2rem;
+
+   button{
+       width: 3rem;
+       background-color: greenyellow;
+       color: white;
+       border-top-right-radius: 0.5rem;
+       border-bottom-right-radius: 0.5rem;
+   }
+`;
+
+export const Grid = styled.div`
+
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+   img{
+       width: 5rem;
+       height: 5rem;
+
+       margin-top: 10rem;
+       cursor: pointer;
+   }
 `;
