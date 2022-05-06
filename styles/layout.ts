@@ -49,15 +49,17 @@ export const Button = styled.div`
 `;
 
 export const Grid = styled.div`
-
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-
+   
+   width: 100%;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   
    img{
        width: 5rem;
        height: 5rem;
-
-       margin-top: 10rem;
+       margin: 1rem;
+       margin-top: 3rem;
        cursor: pointer;
    }
 `;
