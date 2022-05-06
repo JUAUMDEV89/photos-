@@ -1,35 +1,14 @@
-import { FormEvent, useEffect, useState } from 'react'
-import { Layout, Header, Button, Grid } from '../styles/layout';
-import { api } from '../services/api';
+import { useContext } from 'react';
 
-type imagesProps = {
-  id: string;
-  width: number;
-  height: number;
-  urls:{
-    full: string;
-    small: string;
-  }
-}
+import { PhotosContext } from '../context/photosContext';
+
+import { Layout, Header, Button, Grid, Infos } from '../styles/layout';
+import { BsFillImageFill, BsFillPeopleFill, BsBraces } from "react-icons/bs";
 
 function HomePage() {
-   
-    const [images, setImages] = useState<imagesProps []>([]);
-    const [value, setValue] = useState('');
-
-  
-
-    async function handleSearchImage(){
     
-        const response = await api.get(`/photos/?client_id=xV_KQ5oIkUZ5tB8Wk93nsIHnuMVxDjjbUX-W2Q1Cic0&query=${value}`);
-        
-        setImages(response.data);
-        console.log(images);
-        
-        setValue('');
-
-    }
-
+    const { images, setImages, setValue, value, handleSearchImage } = useContext(PhotosContext);
+    
     return <Layout>
       <Header>
         <h1>Photo<span>+</span></h1>
@@ -39,6 +18,32 @@ function HomePage() {
         </Button>
         <button>Minha Galeria</button>
       </Header>
+      <Infos>
+
+        <div>
+          <BsBraces color='gray' fontSize={30} />
+          <div>
+            <h3>1.3B</h3>
+            <span>requests</span>
+          </div>
+        </div>
+
+        <div>
+          <BsFillImageFill color='gray' fontSize={30} />
+          <div>
+            <h3>500k</h3>
+            <span>photos</span>
+          </div>
+        </div>
+
+        <div>
+          <BsFillPeopleFill color='gray' fontSize={30} />
+          <div>
+            <h3>10k</h3>
+            <span>photographers</span>
+          </div>
+        </div>
+      </Infos>
       <Grid>
          {
            images.map(image=>{

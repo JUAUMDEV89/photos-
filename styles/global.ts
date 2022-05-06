@@ -38,8 +38,8 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
     }
 
-    h1, h2, h3, h4, h4, h6, strong{
-        font-weight: 600;
+    h1, h2, h3, h4, h4, h6, strong, span, p{
+        font-family: 'Roboto', sans-serif;
     }
 
     button{

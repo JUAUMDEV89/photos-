@@ -16,7 +16,6 @@ export const Header = styled.header`
   align-items: center;
   padding-left: 3rem;
   padding-right: 3rem;
-  position: fixed;
   box-shadow: 0.1em 0.1em 0.1em gray;
 
   h1{
@@ -58,8 +57,34 @@ export const Grid = styled.div`
    img{
        width: 5rem;
        height: 5rem;
-       margin: 1rem;
+       margin: 0.5rem;
        margin-top: 3rem;
        cursor: pointer;
+   }
+`;
+
+export const Infos = styled.div`
+   width: 100%;
+   max-width: 1100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: auto;
+   margin-top: 2rem;
+
+   div{
+       display: flex;
+       align-items: flex-start;
+
+       div{
+           display: flex;
+           flex-direction: column;
+           margin-left: 1rem;
+
+           h3{
+               font-weight: bold;
+               font-size: 2rem;
+           }
+       }
    }
 `;
